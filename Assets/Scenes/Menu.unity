@@ -155,10 +155,10 @@ RectTransform:
   m_Father: {fileID: 556511070}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.18800001, y: 0.629}
-  m_AnchorMax: {x: 0.81500006, y: 0.93900007}
-  m_AnchoredPosition: {x: 0.000061035156, y: 3.40419}
-  m_SizeDelta: {x: 0, y: -6.8085}
+  m_AnchorMin: {x: 0.13037501, y: 0.6371667}
+  m_AnchorMax: {x: 0.8775625, y: 0.93900007}
+  m_AnchoredPosition: {x: -1.3600464, y: 1.4042969}
+  m_SizeDelta: {x: 0.007797241, y: -2.8084998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &26981001
 MonoBehaviour:
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -374,10 +374,10 @@ RectTransform:
   m_Father: {fileID: 556511070}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.42200002, y: 0.372}
-  m_AnchorMax: {x: 0.58000004, y: 0.42100003}
-  m_AnchoredPosition: {x: -1, y: -33.5}
-  m_SizeDelta: {x: 2, y: 5}
+  m_AnchorMin: {x: 0.42200002, y: 0.30983335}
+  m_AnchorMax: {x: 0.58000004, y: 0.3484167}
+  m_AnchoredPosition: {x: -1, y: -1}
+  m_SizeDelta: {x: 2, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &173240931
 MonoBehaviour:
@@ -887,10 +887,10 @@ RectTransform:
   m_Father: {fileID: 556511070}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.42200002, y: 0.372}
-  m_AnchorMax: {x: 0.58000004, y: 0.42100003}
-  m_AnchoredPosition: {x: -1, y: 26}
-  m_SizeDelta: {x: 2, y: 5}
+  m_AnchorMin: {x: 0.42200002, y: 0.43350002}
+  m_AnchorMax: {x: 0.58000004, y: 0.47500002}
+  m_AnchoredPosition: {x: -1, y: -2}
+  m_SizeDelta: {x: 2, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232723965
 MonoBehaviour:
@@ -1153,6 +1153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuScene: Menu
   selectLevelScene: Levels
+  modevsIAScene: vsIA
   mode2vs2Scene: 
   mode3vs3Scene: 3vs
   mode4vs4Scene: 4vs
