@@ -28,7 +28,8 @@ public class VictoryUI : MonoBehaviour
     private void Start()
     {
         string name = PlayerPrefs.GetString("WinnerName", "Jugador");
-        if (winnerText) winnerText.text = $"¡Ganó {name}!";
+        string number = name.Replace("Player ", "");
+        if (winnerText) winnerText.text = number;
     }
 
     public void OnPlayAgain()

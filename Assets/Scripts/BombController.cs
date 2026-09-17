@@ -26,14 +26,23 @@ public class BombController : MonoBehaviour
         bombsRemaining = bombAmount;
     }
 
+    [Header("Gamepad fire (P3/P4)")]
+    public bool useAxis = false;
+    public string fireAxis = "";
+
     private void Update()
     {
-        // INPUT solo si hay tecla asignada (player). IA usa TryPlaceBomb()
-        if (inputKey != KeyCode.None && bombsRemaining > 0 && Input.GetKeyDown(inputKey))
+        if (bombsRemaining <= 0) return;
+
+        if (useAxis && fireAxis != "")
+        {
+            if (Input.GetButtonDown(fireAxis))
+                StartCoroutine(PlaceBomb());
+        }
+        else if (inputKey != KeyCode.None && Input.GetKeyDown(inputKey))
         {
             StartCoroutine(PlaceBomb());
         }
-
     }
 
     private IEnumerator PlaceBomb()

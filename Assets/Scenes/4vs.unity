@@ -815,7 +815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 4929291701581137174, guid: 4aab9af0769f1f0438eb4876ee12443e, type: 3}
-  inputKey: 331
+  inputKey: 332
   bombFuseTime: 3
   bombAmount: 1
   explosionPrefab: {fileID: 4470388376950256087, guid: 437de206dd1c12b419373f0e38acc329, type: 3}
@@ -826,6 +826,8 @@ MonoBehaviour:
   explosionRadius: 1
   destructibleTiles: {fileID: 1246091456}
   destructiblePrefab: {fileID: 480471965359634459, guid: f112b91b364e43a4a870b44f876c2f79, type: 3}
+  useAxis: 1
+  fireAxis: P4_Fire
 --- !u!114 &434145879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,7 +845,7 @@ MonoBehaviour:
   inputDown: 341
   inputLeft: 276
   inputRight: 275
-  isPlayer3: 1
+  isPlayer3: 0
   p3HorizontalAxis: P3_Horizontal
   p3VerticalAxis: P3_Vertical
   p3DeadZone: 0.25
@@ -1166,6 +1168,8 @@ MonoBehaviour:
   explosionRadius: 1
   destructibleTiles: {fileID: 1246091456}
   destructiblePrefab: {fileID: 480471965359634459, guid: f112b91b364e43a4a870b44f876c2f79, type: 3}
+  useAxis: 0
+  fireAxis: 
 --- !u!114 &638605294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6366,6 +6370,8 @@ MonoBehaviour:
   explosionRadius: 1
   destructibleTiles: {fileID: 1246091456}
   destructiblePrefab: {fileID: 480471965359634459, guid: f112b91b364e43a4a870b44f876c2f79, type: 3}
+  useAxis: 1
+  fireAxis: P3_Fire
 --- !u!114 &1774464356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6496,6 +6502,8 @@ MonoBehaviour:
   explosionRadius: 1
   destructibleTiles: {fileID: 1246091456}
   destructiblePrefab: {fileID: 480471965359634459, guid: f112b91b364e43a4a870b44f876c2f79, type: 3}
+  useAxis: 0
+  fireAxis: 
 --- !u!114 &1953871634
 MonoBehaviour:
   m_ObjectHideFlags: 0
