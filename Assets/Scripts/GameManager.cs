@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
 
         if (players.Length < 3)
             Debug.LogWarning($"[GameManager] Jugadores en array: {players.Length}. ¿Falta asignar P3?");
+
+        // ▶ Música de gameplay
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayGameplayMusic();
     }
 
     public void CheckWinState()

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
@@ -103,6 +103,9 @@ public class MoveController : MonoBehaviour
     {
         enabled = false;
         GetComponent<BombController>().enabled = false;
+
+        // ▶ SFX muerte
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayDeath();
 
         spriteRendererUp.enabled = false;
         spriteRendererDown.enabled = false;

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,6 +47,8 @@ public class itemPickup : MonoBehaviour
                     ia.speed = Mathf.Min(ia.speed + speedAmount, speedMaxIA);
                 break;
         }
+        // ▶ SFX power-up
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayPowerUp();
 
         Destroy(gameObject);
     }

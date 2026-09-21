@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -47,7 +47,7 @@ public class BombController : MonoBehaviour
 
     private IEnumerator PlaceBomb()
     {
-        // snap simple por redondeo (como lo ten�as)
+        // snap simple por redondeo (como lo tenías)
         Vector2 position = transform.position;
         position.x = Mathf.Round(position.x);
         position.y = Mathf.Round(position.y);
@@ -55,11 +55,17 @@ public class BombController : MonoBehaviour
         GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
         bombsRemaining--;
 
+        // ▶ SFX poner bomba
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayBomb();
+
         yield return new WaitForSeconds(bombFuseTime);
 
         position = bomb.transform.position;
         position.x = Mathf.Round(position.x);
         position.y = Mathf.Round(position.y);
+
+        // ▶ SFX explosión
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayExplosion();
 
         Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
         explosion.SetActiveRenderer(explosion.start);

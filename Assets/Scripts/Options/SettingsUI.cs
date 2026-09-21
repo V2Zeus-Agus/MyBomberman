@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 
 /// <summary>
-/// Conecta los elementos de UI (Dropdown, Toggle) con el SettingsManager.
+/// Conecta los elementos de UI (Dropdown, Toggle, Slider) con el SettingsManager.
 /// Ponelo en el panel Options.
 /// </summary>
 public class SettingsUI : MonoBehaviour
@@ -11,13 +11,16 @@ public class SettingsUI : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private TMP_Dropdown resolutionDropdown;
     [SerializeField] private Toggle fullscreenToggle;
+    [SerializeField] private Slider volumeSlider;
 
     private void OnEnable()
     {
-        // Cada vez que se abre el panel, sincronizar UI con los valores guardados
         SetupResolutionDropdown();
         SetupFullscreenToggle();
+        SetupVolumeSlider();
     }
+
+    // ========== RESOLUCIÓN ==========
 
     private void SetupResolutionDropdown()
     {
@@ -37,10 +40,16 @@ public class SettingsUI : MonoBehaviour
         resolutionDropdown.value = SettingsManager.Instance.CurrentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
-        // Limpiar listeners previos para evitar duplicados
         resolutionDropdown.onValueChanged.RemoveAllListeners();
         resolutionDropdown.onValueChanged.AddListener(OnResolutionChanged);
     }
+
+    private void OnResolutionChanged(int index)
+    {
+        SettingsManager.Instance.SetResolution(index);
+    }
+
+    // ========== FULLSCREEN ==========
 
     private void SetupFullscreenToggle()
     {
@@ -52,19 +61,34 @@ public class SettingsUI : MonoBehaviour
         fullscreenToggle.onValueChanged.AddListener(OnFullscreenChanged);
     }
 
-    private void OnResolutionChanged(int index)
-    {
-        SettingsManager.Instance.SetResolution(index);
-    }
-
     private void OnFullscreenChanged(bool isFullscreen)
     {
         SettingsManager.Instance.SetFullscreen(isFullscreen);
     }
 
+    // ========== VOLUMEN ==========
+
+    private void SetupVolumeSlider()
+    {
+        if (volumeSlider == null || SettingsManager.Instance == null) return;
+
+        volumeSlider.minValue = 0.0001f;
+        volumeSlider.maxValue = 1f;
+        volumeSlider.value = SettingsManager.Instance.CurrentVolume;
+
+        volumeSlider.onValueChanged.RemoveAllListeners();
+        volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
+    }
+
+    private void OnVolumeChanged(float value)
+    {
+        SettingsManager.Instance.SetVolume(value);
+    }
+
+    // ========== GUARDAR ==========
+
     private void OnDisable()
     {
-        // Guardar cuando se cierra el panel
         if (SettingsManager.Instance != null)
         {
             SettingsManager.Instance.SaveAll();

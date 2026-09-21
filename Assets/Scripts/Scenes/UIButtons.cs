@@ -17,6 +17,13 @@ public class UIButtons : MonoBehaviour
     [SerializeField] private GameObject optionsPanel;
     [SerializeField] private GameObject controlsPanel;
 
+    private void Start()
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayMenuMusic();
+    }
+
+
     public void Play()
     {
         SceneManager.LoadScene(selectLevelScene);
