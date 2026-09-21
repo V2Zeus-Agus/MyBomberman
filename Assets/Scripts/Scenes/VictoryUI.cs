@@ -29,7 +29,7 @@ public class VictoryUI : MonoBehaviour
     {
         string name = PlayerPrefs.GetString("WinnerName", "Jugador");
         string number = name.Replace("Player ", "");
-        if (winnerText) winnerText.text = number;
+        if (winnerText) winnerText.text = $"Player  <size=200%><b>{number}</b></size>  Won";
     }
 
     public void OnPlayAgain()

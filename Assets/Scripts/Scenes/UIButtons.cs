@@ -12,10 +12,14 @@ public class UIButtons : MonoBehaviour
     [SerializeField] private string mode4vs4Scene = "4vs";
     [SerializeField] private string victoryScene = "Victory";
 
+    [Header("Paneles")]
+    [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject controlsPanel;
+
     public void Play()
     {
         SceneManager.LoadScene(selectLevelScene);
-
     }
 
     public void Quit()
@@ -28,6 +32,32 @@ public class UIButtons : MonoBehaviour
 #endif
     }
 
+    // ========== PANELES ==========
+    public void OpenOptions()
+    {
+        menuPanel.SetActive(false);
+        optionsPanel.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        optionsPanel.SetActive(false);
+        menuPanel.SetActive(true);
+    }
+
+    public void OpenControls()
+    {
+        optionsPanel.SetActive(false);
+        controlsPanel.SetActive(true);
+    }
+
+    public void CloseControls()
+    {
+        controlsPanel.SetActive(false);
+        optionsPanel.SetActive(true);
+    }
+
+    // ========== MODOS ==========
 
     public void PlayvsIA()
     {
